@@ -114,6 +114,13 @@
 				<sonar.jdbc.password>78810033</sonar.jdbc.password>
 				<sonar.jdbc.driver>com.mysql.jdbc.Driver</sonar.jdbc.driver>
 			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>mysql</groupId>
+					<artifactId>mysql-connector-java</artifactId>
+					<version>5.1.36</version>
+				</dependency>
+			</dependencies>
 		</profile>
 
 
