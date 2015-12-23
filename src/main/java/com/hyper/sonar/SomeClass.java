@@ -73,12 +73,12 @@ public class SomeClass {
    }finally{
       //finally block used to close resources
       try{
-         if(stmt!=null)
+         if(stmt!=null){}
          //   stmt.close();
       }catch(SQLException se2){
       }// nothing we can do
       try{
-         if(conn!=null)
+         if(conn!=null){}
           //  conn.close();
       }catch(SQLException se){
          se.printStackTrace();
