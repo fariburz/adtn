@@ -57,8 +57,8 @@ public class SomeClass {
 			}
 			// STEP 6: Clean-up environment
 			// rs.close();
-			// stmt.close();
-			// conn.close();
+			 stmt.close();
+			 conn.close();
 		} catch (SQLException se) {
 			// Handle errors for JDBC
 			se.printStackTrace();
