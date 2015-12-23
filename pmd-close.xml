@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<ruleset name="Design"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+
+  <description>
+The Design ruleset contains rules that flag suboptimal code implementations. Alternate approaches
+are suggested.
+  </description>
+
+  <rule name="CloseResource"
+          since="1.2.2"
+        message="Ensure that resources like this {0} object are closed after use"
+        class="net.sourceforge.pmd.lang.java.rule.design.CloseResourceRule"
+          externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/design.html#CloseResource">
+    <description>
+Ensure that resources (like Connection, Statement, and ResultSet objects) are always closed after use.
+    </description>
+    <priority>3</priority>
+    
+    <properties>
+     <property name="types" value="Connection,Statement,ResultSet"/>
+     <property name="closeTargets" value="closeDBConnection, closeConnection, close"/>
+    </properties>
+    
+    <example>
+<![CDATA[
+public class Bar {
+  public void foo() {
+    Connection c = pool.getConnection();
+    try {
+      // do stuff
+    } catch (SQLException ex) {
+     // handle exception
+    } finally {
+      // oops, should close the connection using 'close'!
+      // c.close();
+    }
+  }
+}
+]]>
+    </example>
+  </rule>
+
+</ruleset>
