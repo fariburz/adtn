@@ -1,5 +1,9 @@
 package com.hyper.sonar;
 import java.sql.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 public class SomeClass {
 
 	public SomeClass() {
@@ -26,7 +30,7 @@ public class SomeClass {
 	static final String USER = "root";
 	static final String PASS = "78810033";
 
-	public void fileio() {
+	public static void fileio() {
 
 		FileOutputStream fop = null;
 		File file;
