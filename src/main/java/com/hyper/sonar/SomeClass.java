@@ -104,42 +104,43 @@ public class SomeClass {
 			}
 			// STEP 6: Clean-up environment
 			 rs.close();
-			 stmt.close();
-			 conn.close();
+			 //stmt.close();
+			 //conn.close();
 		} catch (SQLException se) {
 			// Handle errors for JDBC
 			se.printStackTrace();
 		} catch (Exception e) {
 			// Handle errors for Class.forName
 			e.printStackTrace();
-		} finally {
+		} 
+		//finally {
 			// finally block used to close resources
-			try {
-				if (stmt != null) {
-				stmt.close();
-				}
+		//	try {
+			//	if (stmt != null) {
+			//	stmt.close();
+			//	}
 
-			} catch (SQLException se2) {
-			}// nothing we can do
-			try {
-				if (conn != null) {
-					conn.close();
-				}
+			//} catch (SQLException se2) {
+			//}// nothing we can do
+			//try {
+			//	if (conn != null) {
+			//		conn.close();
+			//	}
 				
-			} catch (SQLException se) {
-				se.printStackTrace();
-			}// end finally try
+			//} catch (SQLException se) {
+			//	se.printStackTrace();
+			//}// end finally try
 			
-			try {
-				if (rs != null) {
-					rs.close();
-				}
+			//try {
+			///	if (rs != null) {
+			//		rs.close();
+			//	}
 				
-			} catch (SQLException se) {
-				se.printStackTrace();
-			}
+			//} catch (SQLException se) {
+			//	se.printStackTrace();
+		//	}
 			
-		}// end try
+		//}// end try
 		System.out.println("Goodbye!");
 	}// end main
 }// end FirstExample
