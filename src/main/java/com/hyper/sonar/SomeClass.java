@@ -82,6 +82,16 @@ public class SomeClass {
 			} catch (SQLException se) {
 				se.printStackTrace();
 			}// end finally try
+			
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				
+			} catch (SQLException se) {
+				se.printStackTrace();
+			}
+			
 		}// end try
 		System.out.println("Goodbye!");
 	}// end main
