@@ -29,6 +29,7 @@ public class SomeClass {
 	public static void main(String[] args) {
 		Connection conn = null;
 		Statement stmt = null;
+		ResultSet rs = null;
 		try {
 			// STEP 2: Register JDBC driver
 			Class.forName("com.mysql.jdbc.Driver");
@@ -42,7 +43,7 @@ public class SomeClass {
 			stmt = conn.createStatement();
 			String sql;
 			sql = "SELECT alstat, text FROM naft.db_alarmtext";
-			ResultSet rs = stmt.executeQuery(sql);
+			 rs = stmt.executeQuery(sql);
 
 			// STEP 5: Extract data from result set
 			while (rs.next()) {
